@@ -1,13 +1,16 @@
 {
-  "last_run_utc": "2026-04-17T23:49:42.712606+00:00",
-  "mode": "gng",
+  "last_run_utc": "2026-04-17T23:56:30.869974+00:00",
+  "mode": "all",
   "success": [
-    "gng"
+    "1x2",
+    "results"
   ],
-  "errors": [],
+  "errors": [
+    "GNG: Page.wait_for_selector: Timeout 20000ms exceeded.\nCall log:\n  - waiting for locator(\"div.match\") to be visible\n"
+  ],
   "counts": {
-    "1x2_rounds": 0,
-    "gng_matches": 90,
-    "results_matches": 0
+    "1x2_rounds": 10,
+    "gng_matches": 0,
+    "results_matches": 8
   }
 }
