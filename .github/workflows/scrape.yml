@@ -1,0 +1,112 @@
+name: CongoBet Auto Scraper
+
+on:
+  # Cron toutes les 5 minutes (minimum GitHub Actions)
+  schedule:
+    - cron: "*/5 * * * *"
+
+  # Déclenchement manuel depuis l'interface GitHub ou Streamlit
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Mode scraping"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - 1x2
+          - gng
+          - results
+
+  # Déclenchement via push (pour tester)
+  push:
+    branches: [main]
+    paths:
+      - "scraper.py"
+      - ".github/workflows/scrape.yml"
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── 2. Setup Python ──────────────────────────────────────
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      # ── 3. Installer les dépendances ─────────────────────────
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install playwright asyncio
+
+      # ── 4. Installer Playwright + Chromium ───────────────────
+      - name: Install Playwright Chromium
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      # ── 5. Créer le dossier data ─────────────────────────────
+      - name: Prepare data directory
+        run: mkdir -p data
+
+      # ── 6. Cycle 1 — Scraping immédiat ───────────────────────
+      - name: "Scraping Cycle 1 — Cotes (mode: ${{ github.event.inputs.mode || 'all' }})"
+        run: python scraper.py ${{ github.event.inputs.mode || 'all' }}
+        continue-on-error: true
+        timeout-minutes: 8
+
+      # ── 7. Attendre 2 min 30 sec (prochaine affiche) ─────────
+      - name: "⏱ Attente 2m30 avant cycle 2"
+        run: sleep 150
+        if: ${{ github.event.inputs.mode == '' || github.event.inputs.mode == 'all' }}
+
+      # ── 8. Cycle 2 — Résultats (après fin de l'affiche) ──────
+      - name: "Scraping Cycle 2 — Résultats + nouvelles cotes"
+        run: python scraper.py all
+        continue-on-error: true
+        timeout-minutes: 8
+        if: ${{ github.event.inputs.mode == '' || github.event.inputs.mode == 'all' }}
+
+      # ── 9. Commit et push les données ────────────────────────
+      - name: Commit & push data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add data/
+          git status
+
+          # Vérifier s'il y a des changements à committer
+          if git diff --staged --quiet; then
+            echo "Aucun changement dans data/ — pas de commit"
+          else
+            TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
+            git commit -m "🤖 Auto-scrape: $TIMESTAMP"
+            git push
+            echo "✓ Données poussées sur GitHub"
+          fi
+
+      # ── 10. Résumé du run ─────────────────────────────────────
+      - name: Show scraping status
+        run: |
+          echo "=== Status scraper ==="
+          cat data/scraper_status.json 2>/dev/null || echo "Pas de fichier status"
+          echo ""
+          echo "=== Fichiers générés ==="
+          ls -lh data/ 2>/dev/null || echo "Dossier data vide"
+        if: always()
