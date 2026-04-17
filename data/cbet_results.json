@@ -1,15 +1,53 @@
 {
   "metadata": {
-    "scraped_at_utc": "2026-04-17T23:36:06.172082+00:00",
+    "scraped_at_utc": "2026-04-17T23:38:21.931624+00:00",
     "show_more_clicks": 8,
     "rounds_count": 1,
     "records_count": 8
   },
   "matches": [
     {
-      "unique_key": "20|C. Palace|22'|23:33",
+      "unique_key": "21|Fulham|24' 33' 79'|23:35",
       "round_label": "",
-      "matchday": 20,
+      "matchday": 21,
+      "round_time": "",
+      "home_team": "Fulham",
+      "away_team": "24' 33' 79'",
+      "score": "23:35",
+      "home_score": 23,
+      "away_score": 35,
+      "halftime_score": null,
+      "home_halftime_score": null,
+      "away_halftime_score": null,
+      "home_goal_minutes": [],
+      "away_goal_minutes": [],
+      "both_teams_scored": true,
+      "gng_result": "Oui",
+      "result_1x2": "2"
+    },
+    {
+      "unique_key": "21|Fulham|24' 33' 79'|2:3",
+      "round_label": "",
+      "matchday": 21,
+      "round_time": "",
+      "home_team": "Fulham",
+      "away_team": "24' 33' 79'",
+      "score": "2:3",
+      "home_score": 2,
+      "away_score": 3,
+      "halftime_score": null,
+      "home_halftime_score": null,
+      "away_halftime_score": null,
+      "home_goal_minutes": [],
+      "away_goal_minutes": [],
+      "both_teams_scored": true,
+      "gng_result": "Oui",
+      "result_1x2": "2"
+    },
+    {
+      "unique_key": "21|C. Palace|22'|23:33",
+      "round_label": "",
+      "matchday": 21,
       "round_time": "",
       "home_team": "C. Palace",
       "away_team": "22'",
@@ -26,9 +64,9 @@
       "result_1x2": "2"
     },
     {
-      "unique_key": "20|C. Palace|22'|2:2",
+      "unique_key": "21|C. Palace|22'|2:2",
       "round_label": "",
-      "matchday": 20,
+      "matchday": 21,
       "round_time": "",
       "home_team": "C. Palace",
       "away_team": "22'",
@@ -45,9 +83,9 @@
       "result_1x2": "X"
     },
     {
-      "unique_key": "20|Bournemouth|89'|23:31",
+      "unique_key": "21|Bournemouth|89'|23:31",
       "round_label": "",
-      "matchday": 20,
+      "matchday": 21,
       "round_time": "",
       "home_team": "Bournemouth",
       "away_team": "89'",
@@ -64,9 +102,9 @@
       "result_1x2": "2"
     },
     {
-      "unique_key": "20|Bournemouth|89'|0:2",
+      "unique_key": "21|Bournemouth|89'|0:2",
       "round_label": "",
-      "matchday": 20,
+      "matchday": 21,
       "round_time": "",
       "home_team": "Bournemouth",
       "away_team": "89'",
@@ -83,9 +121,9 @@
       "result_1x2": "2"
     },
     {
-      "unique_key": "20|Newcastle|73'|23:29",
+      "unique_key": "21|Newcastle|73'|23:29",
       "round_label": "",
-      "matchday": 20,
+      "matchday": 21,
       "round_time": "",
       "home_team": "Newcastle",
       "away_team": "73'",
@@ -102,9 +140,9 @@
       "result_1x2": "2"
     },
     {
-      "unique_key": "20|Newcastle|73'|1:1",
+      "unique_key": "21|Newcastle|73'|1:1",
       "round_label": "",
-      "matchday": 20,
+      "matchday": 21,
       "round_time": "",
       "home_team": "Newcastle",
       "away_team": "73'",
@@ -119,44 +157,6 @@
       "both_teams_scored": true,
       "gng_result": "Oui",
       "result_1x2": "X"
-    },
-    {
-      "unique_key": "20|C. Palace|35' 78'|23:27",
-      "round_label": "",
-      "matchday": 20,
-      "round_time": "",
-      "home_team": "C. Palace",
-      "away_team": "35' 78'",
-      "score": "23:27",
-      "home_score": 23,
-      "away_score": 27,
-      "halftime_score": null,
-      "home_halftime_score": null,
-      "away_halftime_score": null,
-      "home_goal_minutes": [],
-      "away_goal_minutes": [],
-      "both_teams_scored": true,
-      "gng_result": "Oui",
-      "result_1x2": "2"
-    },
-    {
-      "unique_key": "20|C. Palace|35' 78'|2:0",
-      "round_label": "",
-      "matchday": 20,
-      "round_time": "",
-      "home_team": "C. Palace",
-      "away_team": "35' 78'",
-      "score": "2:0",
-      "home_score": 2,
-      "away_score": 0,
-      "halftime_score": null,
-      "home_halftime_score": null,
-      "away_halftime_score": null,
-      "home_goal_minutes": [],
-      "away_goal_minutes": [],
-      "both_teams_scored": false,
-      "gng_result": "Non",
-      "result_1x2": "1"
     }
   ]
 }
