@@ -1,0 +1,69 @@
+07:43:24 [INFO] === DÉBUT CYCLE mode=all ===
+07:43:25 [INFO] === SCRAPE 1X2 ===
+07:43:31 [INFO] 10 rounds valides / 10 total
+07:43:32 [INFO]   1X2 [00:17]: 10 matchs
+07:43:33 [INFO]   1X2 [07:45]: 10 matchs
+07:43:35 [INFO]   1X2 [07:47]: 10 matchs
+07:43:36 [INFO]   1X2 [07:49]: 10 matchs
+07:43:37 [INFO]   1X2 [07:51]: 10 matchs
+07:43:39 [INFO]   1X2 [07:53]: 10 matchs
+07:43:40 [INFO]   1X2 [07:55]: 10 matchs
+07:43:41 [INFO]   1X2 [07:57]: 10 matchs
+07:43:43 [INFO]   1X2 [07:59]: 10 matchs
+07:43:44 [INFO]   1X2 [08:01]: 10 matchs
+07:43:44 [INFO] 1X2: 10 rounds → data/congobet_1x2_rounds.json
+07:43:44 [INFO] === SCRAPE G/NG ===
+07:43:46 [INFO] 10 rounds valides / 10 total
+07:43:49 [INFO]   G/NG [00:02]: 10 matchs
+07:43:51 [INFO]   G/NG [07:45]: 10 matchs
+07:43:53 [INFO]   G/NG [07:47]: 10 matchs
+07:43:56 [INFO]   G/NG [07:49]: 10 matchs
+07:43:58 [INFO]   G/NG [07:51]: 10 matchs
+07:44:00 [INFO]   G/NG [07:53]: 10 matchs
+07:44:02 [INFO]   G/NG [07:55]: 10 matchs
+07:44:05 [INFO]   G/NG [07:57]: 10 matchs
+07:44:07 [INFO]   G/NG [07:59]: 10 matchs
+07:44:09 [INFO]   G/NG [08:01]: 10 matchs
+07:44:09 [INFO] G/NG: 100 cotes → data/cbet_odds.json
+07:44:09 [INFO] === SCRAPE RÉSULTATS ===
+07:44:13 [INFO]   0 clics 'Afficher plus'
+07:44:13 [INFO]   0 groupes résultats
+07:44:13 [INFO] Résultats: 0 → data/cbet_results.json
+07:44:13 [INFO] === FIN 49.4s erreurs=aucune ===
+07:46:43 [INFO] === DÉBUT CYCLE mode=all ===
+07:46:44 [INFO] === SCRAPE 1X2 ===
+07:46:50 [WARNING] Impossible de sélectionner 1X2
+07:46:50 [INFO] 9 rounds valides / 10 total
+07:46:51 [INFO]   1X2 [07:47]: 10 matchs
+07:46:52 [INFO]   1X2 [07:49]: 10 matchs
+07:46:53 [INFO]   1X2 [07:51]: 10 matchs
+07:46:54 [INFO]   1X2 [07:53]: 10 matchs
+07:46:55 [INFO]   1X2 [07:55]: 10 matchs
+07:46:57 [INFO]   1X2 [07:57]: 10 matchs
+07:46:58 [INFO]   1X2 [07:59]: 10 matchs
+07:46:59 [INFO]   1X2 [08:01]: 10 matchs
+07:47:29 [WARNING] [retry 1/2] click_round: Locator.scroll_into_view_if_needed: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("hg-instant-league-round-picker li").nth(9)
+
+07:48:01 [ERROR]   1X2 round 9: Locator.scroll_into_view_if_needed: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("hg-instant-league-round-picker li").nth(9)
+
+07:48:01 [INFO] 1X2: 8 rounds → data/congobet_1x2_rounds.json
+07:48:01 [INFO] === SCRAPE G/NG ===
+07:48:04 [INFO] 8 rounds valides / 9 total
+07:48:06 [INFO]   G/NG [07:49]: 10 matchs
+07:48:09 [INFO]   G/NG [07:51]: 10 matchs
+07:48:12 [INFO]   G/NG [07:53]: 10 matchs
+07:48:14 [INFO]   G/NG [07:55]: 10 matchs
+07:48:16 [INFO]   G/NG [07:57]: 10 matchs
+07:48:19 [INFO]   G/NG [07:59]: 10 matchs
+07:48:21 [INFO]   G/NG [08:01]: 10 matchs
+07:48:23 [INFO]   G/NG [08:03]: 10 matchs
+07:48:23 [INFO] G/NG: 80 cotes → data/cbet_odds.json
+07:48:23 [INFO] === SCRAPE RÉSULTATS ===
+07:48:27 [INFO]   0 clics 'Afficher plus'
+07:48:27 [INFO]   0 groupes résultats
+07:48:27 [INFO] Résultats: 0 → data/cbet_results.json
+07:48:57 [INFO] === FIN 134.2s erreurs=aucune ===
