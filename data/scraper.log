@@ -512,3 +512,66 @@ Call log:
 11:46:07 [INFO]   0 groupes résultats
 11:46:07 [INFO] Résultats: 0 → data/cbet_results.json
 11:46:07 [INFO] === FIN 54.8s erreurs=aucune ===
+12:04:12 [INFO] === DÉBUT CYCLE mode=all ===
+12:04:14 [INFO] === SCRAPE 1X2 ===
+12:04:21 [INFO] 10 rounds valides / 10 total
+12:04:22 [INFO]   1X2 [01:28]: 10 matchs
+12:04:23 [INFO]   1X2 [12:07]: 10 matchs
+12:04:25 [INFO]   1X2 [12:09]: 10 matchs
+12:04:26 [INFO]   1X2 [12:11]: 10 matchs
+12:04:27 [INFO]   1X2 [12:13]: 10 matchs
+12:04:29 [INFO]   1X2 [12:15]: 10 matchs
+12:04:30 [INFO]   1X2 [12:17]: 10 matchs
+12:04:31 [INFO]   1X2 [12:19]: 10 matchs
+12:04:33 [INFO]   1X2 [12:21]: 10 matchs
+12:04:34 [INFO]   1X2 [12:23]: 10 matchs
+12:04:34 [INFO] 1X2: 10 rounds → data/congobet_1x2_rounds.json
+12:04:34 [INFO] === SCRAPE G/NG ===
+12:04:36 [INFO] 10 rounds valides / 10 total
+12:04:39 [INFO]   G/NG [01:13]: 10 matchs
+12:04:41 [INFO]   G/NG [12:07]: 10 matchs
+12:04:43 [INFO]   G/NG [12:09]: 10 matchs
+12:04:45 [INFO]   G/NG [12:11]: 10 matchs
+12:04:48 [INFO]   G/NG [12:13]: 10 matchs
+12:04:50 [INFO]   G/NG [12:15]: 10 matchs
+12:04:52 [INFO]   G/NG [12:17]: 10 matchs
+12:04:54 [INFO]   G/NG [12:19]: 10 matchs
+12:04:57 [INFO]   G/NG [12:21]: 10 matchs
+12:04:59 [INFO]   G/NG [12:23]: 10 matchs
+12:04:59 [INFO] G/NG: 100 cotes → data/cbet_odds.json
+12:04:59 [INFO] === SCRAPE RÉSULTATS ===
+12:05:03 [INFO]   0 clics 'Afficher plus'
+12:05:03 [INFO]   0 groupes résultats
+12:05:03 [INFO] Résultats: 0 → data/cbet_results.json
+12:05:34 [INFO] === FIN 80.9s erreurs=aucune ===
+12:08:04 [INFO] === DÉBUT CYCLE mode=all ===
+12:08:05 [INFO] === SCRAPE 1X2 ===
+12:08:12 [WARNING] Impossible de sélectionner 1X2
+12:08:12 [INFO] 9 rounds valides / 10 total
+12:08:14 [INFO]   1X2 [12:09]: 10 matchs
+12:08:15 [INFO]   1X2 [12:11]: 10 matchs
+12:08:16 [INFO]   1X2 [12:13]: 10 matchs
+12:08:18 [INFO]   1X2 [12:15]: 10 matchs
+12:08:19 [INFO]   1X2 [12:17]: 10 matchs
+12:08:20 [INFO]   1X2 [12:19]: 10 matchs
+12:08:22 [INFO]   1X2 [12:21]: 10 matchs
+12:08:23 [INFO]   1X2 [12:23]: 10 matchs
+12:08:25 [INFO]   1X2 [12:25]: 10 matchs
+12:08:25 [INFO] 1X2: 9 rounds → data/congobet_1x2_rounds.json
+12:08:25 [INFO] === SCRAPE G/NG ===
+12:08:27 [INFO] 9 rounds valides / 10 total
+12:08:29 [INFO]   G/NG [12:09]: 10 matchs
+12:08:32 [INFO]   G/NG [12:11]: 10 matchs
+12:08:34 [INFO]   G/NG [12:13]: 10 matchs
+12:08:36 [INFO]   G/NG [12:15]: 10 matchs
+12:08:39 [INFO]   G/NG [12:17]: 10 matchs
+12:08:41 [INFO]   G/NG [12:19]: 10 matchs
+12:08:43 [INFO]   G/NG [12:21]: 10 matchs
+12:08:45 [INFO]   G/NG [12:23]: 10 matchs
+12:08:56 [INFO]   G/NG [12:25]: 10 matchs
+12:08:56 [INFO] G/NG: 90 cotes → data/cbet_odds.json
+12:08:56 [INFO] === SCRAPE RÉSULTATS ===
+12:09:01 [INFO]   0 clics 'Afficher plus'
+12:09:01 [INFO]   0 groupes résultats
+12:09:01 [INFO] Résultats: 0 → data/cbet_results.json
+12:09:01 [INFO] === FIN 56.3s erreurs=aucune ===
