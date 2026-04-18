@@ -109,4 +109,8 @@ jobs:
           echo ""
           echo "=== Fichiers générés ==="
           ls -lh data/ 2>/dev/null || echo "Dossier data vide"
+          
         if: always()
+        # fusion des BD
+      - name: Consolidate data
+        run: python consolidate.py
