@@ -29,16 +29,25 @@ SEL = {
     "market_select": "hg-event-bet-type-picker hg-select .selected",
     "market_option": "hg-event-bet-type-picker hg-select .dropdown .option",
 
-    # Matchs
+    # Matchs (cotes)
     "match_any"    : "div.match",
     "match_1x2"    : "div.match.bet-type-1x2",
     "match_gng"    : "div.match.bet-type-gng, div.match",  # fallback
     "team_spans"   : ".teams span",
     "odds_spans"   : "span.odds",
 
-    # Résultats
-    "results_round" : "hg-instant-league-results-round",
-    "show_more_btn" : "button.btn-show-more, hg-show-more-button button",
+    # Résultats (structure réelle du site)
+    "results_container": "hg-instant-league-results .result-container",
+    "results_header"   : ".header",
+    "results_row"      : ".match-results .row",
+    "team_span"        : ".team span",
+    "match_score"      : ".match-score",
+    "halftime_score"   : ".halfTime-score",
+    "home_goals_min"   : ".haltTime-goals.home span",
+    "away_goals_min"   : ".haltTime-goals.away span",
+    "show_more_btn"    : "text=/Afficher plus/i",
+
+    # Anciens sélecteurs (gardés pour compatibilité, mais non utilisés dans la nouvelle version)
     "result_label"  : ".round-label, .header-label, [class*='round-label']",
     "result_home"   : ".home-team, [class*='home']",
     "result_away"   : ".away-team, [class*='away']",
