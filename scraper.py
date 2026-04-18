@@ -242,7 +242,7 @@ async def scrape_gng(scraper: CongoBetScraper) -> dict:
     """
     log.info("=== SCRAPE G/NG ===")
     scraped_at = datetime.now(timezone.utc).isoformat()
-    if "matches" not in scraper.page.url:
+    if C.URL_MATCHES not in scraper.page.url:
         await scraper.goto(C.URL_MATCHES)
     ok = await scraper.ensure_market(C.MARKET_GNG)
     if not ok:

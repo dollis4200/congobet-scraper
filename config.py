@@ -60,4 +60,4 @@ FILE_STATUS  = "data/scraper_status.json"
 
 # ── Résultats : max journées à conserver ──────────────────────
 MAX_SHOW_MORE_CLICKS = 8
-MAX_DAYS_HISTORY     = 7   # conserver N jours de résultats
+MAX_DAYS_HISTORY     = 7   # nb max de journées affichées dans les dashboards

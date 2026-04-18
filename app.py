@@ -39,8 +39,16 @@ div[data-testid="metric-container"] { background:#0d1219; border:1px solid #1e2d
 </style>""", unsafe_allow_html=True)
 
 # ── Auto-refresh ──────────────────────────────────────────────
-# Rafraîchissement automatique toutes les 30 secondes
 count = st_autorefresh(interval=30_000, limit=None, key="auto_refresh")
+
+# ── Avertissement si secrets manquants ────────────────────────
+if not (GITHUB_TOKEN and GITHUB_OWNER and GITHUB_REPO):
+    st.sidebar.warning(
+        "⚠️ Variables GitHub incomplètes.\n\n"
+        "Configurez **GITHUB_TOKEN**, **GITHUB_OWNER** et **GITHUB_REPO** "
+        "dans Settings → Secrets de votre app Streamlit.\n\n"
+        "Le déclenchement manuel et l'affichage des runs sont désactivés."
+    )
 
 # ── Header ────────────────────────────────────────────────────
 st.markdown("""
@@ -257,8 +265,11 @@ with tab4:
         st.markdown(f"- **{k}**: {v}")
     st.divider()
     st.markdown("#### URLs des données (raw GitHub)")
-    for f in ["congobet_1x2_rounds.json","cbet_odds.json","cbet_results.json"]:
-        st.code(f"{RAW_BASE}/{f}")
+    if GITHUB_OWNER and GITHUB_REPO:
+        for f in ["congobet_1x2_rounds.json","cbet_odds.json","cbet_results.json"]:
+            st.code(f"{RAW_BASE}/{f}")
+    else:
+        st.info("Configurez GITHUB_OWNER et GITHUB_REPO pour voir les URLs des fichiers.")
     st.divider()
     st.markdown("#### Derniers runs GitHub Actions")
     if env_ok:
