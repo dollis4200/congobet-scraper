@@ -39,16 +39,17 @@ log = logging.getLogger("congobet")
 def _clean(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "")).strip()
 
+def _parse_score(text: str) -> tuple[int | None, int | None]:
+    """Extrait deux entiers d'une chaîne comme '3:1' ou '2-0'."""
+    m = re.search(r"(\d+)\s*[:\-]\s*(\d+)", text or "")
+    return (int(m.group(1)), int(m.group(2))) if m else (None, None)
+
 def _is_valid_time(s: str) -> bool:
     return bool(re.match(r"^\d{1,2}:\d{2}$", (s or "").strip()))
 
 def _extract_hhmm(label: str) -> str:
     m = re.search(r"\b(\d{1,2}:\d{2})\b", label or "")
     return m.group(1).zfill(5) if m else ""
-
-def _parse_score(text: str) -> tuple:
-    m = re.search(r"(\d+)\s*[:\-]\s*(\d+)", text or "")
-    return (int(m.group(1)), int(m.group(2))) if m else (None, None)
 
 def _save(path: str, data: dict) -> None:
     Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -280,90 +281,120 @@ async def scrape_gng(scraper: CongoBetScraper) -> dict:
 
 
 async def scrape_results(scraper: CongoBetScraper) -> dict:
-    log.info("=== SCRAPE RÉSULTATS ===")
+    """Version corrigée utilisant les sélecteurs fiables du site."""
+    log.info("=== SCRAPE RÉSULTATS (version corrigée) ===")
     scraped_at = datetime.now(timezone.utc).isoformat()
+    page = scraper.page
     await scraper.goto(C.URL_RESULTS)
-    # Afficher plus
+
+    # Clics "Afficher plus"
     clicks = 0
     for _ in range(C.MAX_SHOW_MORE_CLICKS):
         try:
-            btn = scraper.page.locator(C.SEL["show_more_btn"]).last
+            btn = page.locator(C.SEL["show_more_btn"]).first
             if await btn.count() == 0 or not await btn.is_visible(timeout=3000):
                 break
             await btn.scroll_into_view_if_needed()
             await btn.click()
-            await scraper.page.wait_for_load_state("networkidle")
-            await scraper.page.wait_for_timeout(800)
+            await page.wait_for_load_state("networkidle")
+            await page.wait_for_timeout(1200)
             clicks += 1
         except Exception:
             break
     log.info(f"  {clicks} clics 'Afficher plus'")
-    matches, seen, round_labels = [], set(), []
-    round_groups = scraper.page.locator(C.SEL["results_round"])
-    group_count  = await round_groups.count()
-    log.info(f"  {group_count} groupes résultats")
-    for g_idx in range(group_count):
-        group = round_groups.nth(g_idx)
+
+    # Attendre que les conteneurs de résultats soient présents
+    try:
+        await page.wait_for_selector(C.SEL["results_container"], timeout=C.TIMEOUT_ELEMENT)
+    except PWTimeout:
+        log.warning("Aucun conteneur de résultat trouvé")
+        return {"metadata": {"scraped_at_utc": scraped_at, "records_count": 0}, "matches": []}
+
+    containers = page.locator(C.SEL["results_container"])
+    records = []
+    seen_keys = set()
+    round_labels = []
+
+    for i in range(await containers.count()):
+        container = containers.nth(i)
         try:
-            label_el = group.locator(C.SEL["result_label"]).first
-            round_label = _clean(await label_el.inner_text()) if await label_el.count() > 0 else ""
-            md_m = re.search(r"[Jj]ourn[eé]e\s*(\d+)", round_label)
-            matchday  = int(md_m.group(1)) if md_m else None
-            round_time = _extract_hhmm(round_label)
-            if round_label and round_label not in round_labels:
-                round_labels.append(round_label)
-            cards = group.locator(".match, hg-event-result, [class*='event-row']")
-            for c_idx in range(await cards.count()):
-                card = cards.nth(c_idx)
-                try:
-                    card_text = _clean(await card.inner_text())
-                    hs, as_ = _parse_score(card_text)
-                    if hs is None: continue
-                    team_els = card.locator(C.SEL["team_spans"])
-                    teams = []
-                    for t in range(await team_els.count()):
-                        txt = _clean(await team_els.nth(t).inner_text())
-                        if txt and not re.match(r"^[\d:\-]+$", txt): teams.append(txt)
-                    if len(teams) < 2:
-                        parts = re.split(r"\d+\s*[:\-]\s*\d+", card_text)
-                        if len(parts) >= 2: teams = [_clean(parts[0]), _clean(parts[-1])]
-                    if len(teams) < 2 or not teams[0] or not teams[-1]: continue
-                    score = f"{hs}:{as_}"
-                    ukey  = f"{matchday}|{teams[0]}|{teams[-1]}|{score}"
-                    if ukey in seen: continue
-                    seen.add(ukey)
-                    ht_m   = re.search(r"\((\d+)[:\-](\d+)\)", card_text)
-                    home_ht = int(ht_m.group(1)) if ht_m else None
-                    away_ht = int(ht_m.group(2)) if ht_m else None
-                    both   = hs > 0 and as_ > 0
-                    matches.append({
-                        "unique_key": ukey, "round_label": round_label,
-                        "matchday": matchday, "round_time": round_time,
-                        "home_team": teams[0], "away_team": teams[-1],
-                        "score": score, "home_score": hs, "away_score": as_,
-                        "halftime_score": f"{home_ht}:{away_ht}" if home_ht is not None else None,
-                        "home_halftime_score": home_ht, "away_halftime_score": away_ht,
-                        "both_teams_scored": both,
-                        "gng_result": "Oui" if both else "Non",
-                        "result_1x2": "1" if hs > as_ else ("X" if hs == as_ else "2"),
-                    })
-                except Exception as e:
-                    log.debug(f"  card {c_idx}/{g_idx}: {e}")
-        except Exception as e:
-            log.warning(f"  groupe {g_idx}: {e}")
-    matches.sort(key=lambda x: -(x.get("matchday") or 0))
+            header_text = await container.locator(C.SEL["results_header"]).inner_text()
+        except Exception:
+            continue
+        round_label = _clean(header_text)
+        round_labels.append(round_label)
+        matchday_match = re.search(r"Journée\s+(\d+)", round_label, re.IGNORECASE)
+        matchday = int(matchday_match.group(1)) if matchday_match else None
+        round_time = ""
+        if "-" in round_label:
+            round_time = _clean(round_label.split("-", 1)[1])
+
+        rows = container.locator(C.SEL["results_row"])
+        for j in range(await rows.count()):
+            row = rows.nth(j)
+            # Équipes
+            team_spans = row.locator(C.SEL["team_span"])
+            teams = []
+            for k in range(await team_spans.count()):
+                txt = _clean(await team_spans.nth(k).inner_text())
+                if txt:
+                    teams.append(txt)
+            if len(teams) < 2:
+                continue
+
+            # Score final
+            score_text = _clean(await row.locator(C.SEL["match_score"]).inner_text())
+            home_score, away_score = _parse_score(score_text)
+            if home_score is None or away_score is None:
+                continue
+
+            # Score mi-temps (optionnel)
+            halftime_text = ""
+            try:
+                ht_el = row.locator(C.SEL["halftime_score"])
+                if await ht_el.count():
+                    halftime_text = _clean(await ht_el.inner_text()).replace("MT:", "").strip()
+            except Exception:
+                pass
+            home_ht, away_ht = _parse_score(halftime_text) if halftime_text else (None, None)
+
+            both = (home_score > 0 and away_score > 0)
+            gng = "Oui" if both else "Non"
+            ukey = f"{matchday}|{teams[0]}|{teams[-1]}|{score_text}"
+            if ukey in seen_keys:
+                continue
+            seen_keys.add(ukey)
+
+            records.append({
+                "unique_key": ukey,
+                "round_label": round_label,
+                "matchday": matchday,
+                "round_time": round_time,
+                "home_team": teams[0],
+                "away_team": teams[-1],
+                "score": score_text,
+                "home_score": home_score,
+                "away_score": away_score,
+                "halftime_score": halftime_text,
+                "home_halftime_score": home_ht,
+                "away_halftime_score": away_ht,
+                "both_teams_scored": both,
+                "gng_result": gng,
+                "result_1x2": "1" if home_score > away_score else ("X" if home_score == away_score else "2"),
+            })
+
     payload = {
         "metadata": {
             "scraped_at_utc": scraped_at,
             "show_more_clicks": clicks,
             "rounds_count": len(round_labels),
             "round_labels": round_labels[:32],
-            "records_count": len(matches),
+            "records_count": len(records),
         },
-        "matches": matches,
+        "matches": records,
     }
     _save(C.FILE_RESULTS, payload)
-    log.info(f"Résultats: {len(matches)} → {C.FILE_RESULTS}")
+    log.info(f"Résultats: {len(records)} → {C.FILE_RESULTS}")
     return payload
 
 
