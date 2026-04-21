@@ -1,116 +1,130 @@
 name: CongoBet Auto Scraper
 
 on:
-  # Cron toutes les 5 minutes (minimum GitHub Actions)
   schedule:
+    # ─── Cron toutes les 5 minutes ───────────────────────────────
+    # Sans sleep interne le job dure ~70s → tient dans 5 min
     - cron: "*/5 * * * *"
 
-  # Déclenchement manuel depuis l'interface GitHub ou Streamlit
   workflow_dispatch:
     inputs:
       mode:
         description: "Mode scraping"
         required: false
-        default: "all"
+        default: "odds"
         type: choice
-        options:
-          - all
-          - 1x2
-          - gng
-          - results
+        options: [odds, results, all]
 
-  # Déclenchement via push (pour tester)
   push:
     branches: [main]
     paths:
       - "scraper.py"
+      - "config.py"
       - ".github/workflows/scrape.yml"
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-
+    timeout-minutes: 8       # ← réduit de 30 à 8 min
     permissions:
       contents: write
 
     steps:
-      # ── 1. Checkout ──────────────────────────────────────────
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      # ── 1. Checkout ─────────────────────────────────────────────
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── 2. Setup Python ──────────────────────────────────────
-      - name: Setup Python 3.11
-        uses: actions/setup-python@v5
+      # ── 2. Python ───────────────────────────────────────────────
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
 
-      # ── 3. Installer les dépendances ─────────────────────────
-      - name: Install Python dependencies
+      # ── 3. Cache Playwright Chromium ────────────────────────────
+      # Économise ~75 secondes à chaque run (pas de re-téléchargement de Chrome)
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            playwright-chromium-${{ runner.os }}-
+
+      # ── 4. Dépendances Python ───────────────────────────────────
+      - name: Install Python deps
         run: |
           pip install --upgrade pip
-          pip install playwright asyncio
+          pip install playwright
 
-      # ── 4. Installer Playwright + Chromium ───────────────────
+      # ── 5. Playwright (install si pas en cache) ─────────────────
       - name: Install Playwright Chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: |
           playwright install chromium
           playwright install-deps chromium
 
-      # ── 5. Créer le dossier data ─────────────────────────────
+      # ── 6. Deps système si Chromium depuis cache ─────────────────
+      - name: Install system deps (cached Chromium)
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: playwright install-deps chromium
+
+      # ── 7. Préparer data/ ───────────────────────────────────────
       - name: Prepare data directory
         run: mkdir -p data
 
-      # ── 6. Cycle 1 — Scraping immédiat ───────────────────────
-      - name: "Scraping Cycle 1 — Cotes (mode: ${{ github.event.inputs.mode || 'all' }})"
-        run: python scraper.py ${{ github.event.inputs.mode || 'all' }}
+      # ── 8. CYCLE COTES — 1X2 + G/NG ────────────────────────────
+      # Scrape les cotes de TOUTES les affiches disponibles (~40-50s)
+      - name: "Scrape cotes (1X2 + G/NG)"
+        run: python scraper.py odds
         continue-on-error: true
-        timeout-minutes: 8
+        timeout-minutes: 4
 
-      # ── 7. Attendre 2 min 30 sec (prochaine affiche) ─────────
-      - name: "⏱ Attente 2m30 avant cycle 2"
-        run: sleep 150
-        if: ${{ github.event.inputs.mode == '' || github.event.inputs.mode == 'all' }}
-
-      # ── 8. Cycle 2 — Résultats (après fin de l'affiche) ──────
-      - name: "Scraping Cycle 2 — Résultats + nouvelles cotes"
-        run: python scraper.py all
-        continue-on-error: true
-        timeout-minutes: 8
-        if: ${{ github.event.inputs.mode == '' || github.event.inputs.mode == 'all' }}
-
-      # ── 9. Commit et push les données ────────────────────────
-      - name: Commit & push data
+      # ── 9. Commit cotes IMMÉDIATEMENT ───────────────────────────
+      # Les utilisateurs voient les nouvelles cotes sans attendre les résultats
+      - name: "Push cotes"
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add data/
-          git status
-
-          # Vérifier s'il y a des changements à committer
-          if git diff --staged --quiet; then
-            echo "Aucun changement dans data/ — pas de commit"
-          else
-            TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
-            git commit -m "🤖 Auto-scrape: $TIMESTAMP"
+          git add data/congobet_1x2_rounds.json data/cbet_odds.json data/scraper_status.json 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "📊 Cotes: $(date -u '+%H:%M UTC')"
             git push
-            echo "✓ Données poussées sur GitHub"
+            echo "✓ Cotes publiées"
           fi
 
-      # ── 10. Résumé du run ─────────────────────────────────────
-      - name: Show scraping status
+      # ── 10. CYCLE RÉSULTATS ──────────────────────────────────────
+      # Les résultats des affiches précédentes sont disponibles ~30s après la fin
+      # Au moment où on arrive ici (~50s après le début), les résultats
+      # de l'affiche d'il y a 2-3 min sont déjà là
+      - name: "Scrape résultats"
+        run: python scraper.py results
+        continue-on-error: true
+        timeout-minutes: 3
+
+      # ── 11. Consolidation + commit résultats ────────────────────
+      - name: "Consolider et push résultats"
         run: |
-          echo "=== Status scraper ==="
-          cat data/scraper_status.json 2>/dev/null || echo "Pas de fichier status"
-          echo ""
-          echo "=== Fichiers générés ==="
-          ls -lh data/ 2>/dev/null || echo "Dossier data vide"
-          
+          python consolidate.py || true
+          git add data/cbet_results.json data/consolidated_matches.json data/scraper_status.json 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "📋 Résultats: $(date -u '+%H:%M UTC')"
+            git push
+            echo "✓ Résultats publiés"
+          fi
+
+      # ── 12. Résumé ──────────────────────────────────────────────
+      - name: Summary
         if: always()
-        # fusion des BD
-      - name: Consolidate data
-        run: python consolidate.py
+        run: |
+          echo "Cache Playwright: ${{ steps.playwright-cache.outputs.cache-hit == 'true' && 'HIT ✓ (~75s économisées)' || 'MISS (premier run)' }}"
+          echo ""
+          cat data/scraper_status.json 2>/dev/null | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)
+          print(f'Durée totale: {d[\"total_duration_s\"]}s')
+          print(f'Durées: {d[\"durations_s\"]}')
+          print(f'Erreurs: {d[\"errors\"] or \"aucune\"}')
+          print(f'Counts: {d[\"counts\"]}')
+          " || true
