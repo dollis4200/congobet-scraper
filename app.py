@@ -62,21 +62,27 @@ st.markdown("""
 
 
 # ── Data loaders ─────────────────────────────────────────────
-@st.cache_data(ttl=25)
+@st.cache_data(ttl=8)
 def load_json(filename: str) -> dict | None:
+    if GITHUB_OWNER and GITHUB_REPO:
+        try:
+            url = f"{RAW_BASE}/{filename}?v={int(time.time() // 10)}"
+            headers = {
+                "Cache-Control": "no-cache, no-store, max-age=0",
+                "Pragma": "no-cache",
+            }
+            if GITHUB_TOKEN:
+                headers["Authorization"] = f"token {GITHUB_TOKEN}"
+            r = requests.get(url, headers=headers, timeout=10)
+            if r.status_code == 200:
+                return r.json()
+        except Exception:
+            pass
+
     local = DATA_DIR / filename
     if local.exists():
         try:
             return json.loads(local.read_text("utf-8"))
-        except Exception:
-            pass
-    if GITHUB_OWNER and GITHUB_REPO:
-        try:
-            url = f"{RAW_BASE}/{filename}"
-            headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
-            r = requests.get(url, headers=headers, timeout=10)
-            if r.status_code == 200:
-                return r.json()
         except Exception:
             pass
     return None
@@ -165,7 +171,7 @@ with col_c:
     if st.button("🔄 Vider le cache", use_container_width=True):
         st.cache_data.clear()
         st.rerun()
-    st.caption(f"Auto-refresh: 30s · Run #{count}")
+    st.caption(f"Auto-refresh: 30s · cache JSON 8s · Run #{count}")
 
 st.divider()
 
