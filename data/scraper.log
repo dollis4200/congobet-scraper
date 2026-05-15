@@ -12190,3 +12190,8 @@ Call log:
 21:45:08 [INFO] === SCRAPE G/NG ===
 21:45:17 [WARNING] Impossible de sélectionner G/NG
 21:45:17 [INFO] === FIN 9.2s erreurs=aucune ===
+21:47:03 [INFO] === DÉBUT CYCLE mode=results ===
+21:47:03 [INFO] === SCRAPE RÉSULTATS (version corrigée) ===
+21:47:17 [INFO]   4 clics 'Afficher plus'
+21:47:20 [INFO] Résultats: 200 → data/cbet_results.json
+21:47:50 [INFO] === FIN 47.6s erreurs=aucune ===
