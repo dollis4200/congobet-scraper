@@ -13416,3 +13416,8 @@ Call log:
 18:13:36 [INFO] === SCRAPE G/NG ===
 18:13:44 [WARNING] Impossible de sélectionner G/NG
 18:13:45 [INFO] === FIN 8.7s erreurs=aucune ===
+18:15:31 [INFO] === DÉBUT CYCLE mode=results ===
+18:15:31 [INFO] === SCRAPE RÉSULTATS (version corrigée) ===
+18:15:44 [INFO]   4 clics 'Afficher plus'
+18:15:48 [INFO] Résultats: 200 → data/cbet_results.json
+18:15:48 [INFO] === FIN 17.5s erreurs=aucune ===
