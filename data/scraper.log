@@ -20097,3 +20097,8 @@ Call log:
 00:01:50 [INFO] === SCRAPE G/NG ===
 00:01:59 [WARNING] Impossible de sélectionner G/NG
 00:01:59 [INFO] === FIN 9.5s erreurs=aucune ===
+00:03:45 [INFO] === DÉBUT CYCLE mode=results ===
+00:03:46 [INFO] === SCRAPE RÉSULTATS (version corrigée) ===
+00:04:00 [INFO]   5 clics 'Afficher plus'
+00:04:04 [INFO] Résultats: 220 → data/cbet_results.json
+00:04:35 [INFO] === FIN 49.4s erreurs=aucune ===
