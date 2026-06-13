@@ -1,17 +1,17 @@
 {
-  "last_run_utc": "2026-06-13T17:59:27.779706+00:00",
-  "mode": "gng",
-  "total_duration_s": 59.4,
+  "last_run_utc": "2026-06-13T18:02:12.509991+00:00",
+  "mode": "results",
+  "total_duration_s": 18.8,
   "durations_s": {
-    "gng": 28.9
+    "results": 18.4
   },
   "success": [
-    "gng"
+    "results"
   ],
   "errors": [],
   "counts": {
     "1x2_rounds": 0,
-    "gng_matches": 60,
-    "results_matches": 0
+    "gng_matches": 0,
+    "results_matches": 240
   }
 }
