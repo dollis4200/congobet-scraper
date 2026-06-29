@@ -25492,3 +25492,37 @@ Call log:
 12:05:57 [INFO]   0 clics 'Afficher plus'
 12:05:57 [INFO] Résultats: 10 → data/cbet_results.json
 12:05:57 [INFO] === FIN 6.6s erreurs=aucune ===
+16:05:38 [INFO] === DÉBUT CYCLE mode=1x2 ===
+16:05:38 [INFO] === SCRAPE 1X2 ===
+16:05:48 [WARNING] Impossible de sélectionner 1X2
+16:05:48 [INFO] 9 rounds retenus / 10 total (9 horodatés)
+16:05:50 [INFO]   1X2 [16:06]: 10 matchs
+16:05:52 [INFO]   1X2 [16:08]: 10 matchs
+16:05:54 [INFO]   1X2 [16:10]: 10 matchs
+16:05:55 [INFO]   1X2 [16:12]: 10 matchs
+16:05:56 [INFO]   1X2 [16:14]: 10 matchs
+16:05:58 [INFO]   1X2 [16:16]: 10 matchs
+16:06:00 [INFO]   1X2 [16:18]: 10 matchs
+16:06:01 [INFO]   1X2 [16:20]: 10 matchs
+16:06:02 [INFO]   1X2 [16:22]: 10 matchs
+16:06:02 [INFO] 1X2: 9 rounds → data/congobet_1x2_rounds.json
+16:06:02 [INFO] === FIN 24.6s erreurs=aucune ===
+16:06:03 [INFO] === DÉBUT CYCLE mode=gng ===
+16:06:03 [INFO] === SCRAPE G/NG ===
+16:06:14 [INFO] rounds ignorés (timer courant / hors séquence): ['00:41']
+16:06:14 [INFO] 9 rounds retenus / 10 total (10 horodatés)
+16:06:18 [INFO]   G/NG [16:08]: 10 matchs
+16:06:21 [INFO]   G/NG [16:10]: 10 matchs
+16:06:24 [INFO]   G/NG [16:12]: 10 matchs
+16:06:28 [INFO]   G/NG [16:14]: 10 matchs
+16:06:32 [INFO]   G/NG [16:16]: 10 matchs
+16:06:36 [INFO]   G/NG [16:18]: 10 matchs
+16:06:51 [WARNING] [retry 1/2] click_round: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div.match")
+
+16:06:59 [INFO]   G/NG [16:20]: 10 matchs
+16:07:04 [INFO]   G/NG [16:22]: 10 matchs
+16:07:07 [INFO]   G/NG [16:24]: 10 matchs
+16:07:07 [INFO] G/NG: 90 cotes → data/cbet_odds.json
+16:07:07 [INFO] === FIN 64.6s erreurs=aucune ===
