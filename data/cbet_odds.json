@@ -5,224 +5,159 @@
     "market": "G/NG"
   },
   "metadata": {
-    "scraped_at_utc": "2026-07-02T20:10:51.343755+00:00",
-    "records_count": 60
+    "scraped_at_utc": "2026-07-02T22:41:05.542443+00:00",
+    "records_count": 20
   },
   "matches": [
     {
-      "unique_key": "20:22|West Ham|Sunderland",
-      "round_time": "20:22",
-      "market": "G/NG",
-      "teams": {
-        "home": "West Ham",
-        "away": "Sunderland"
-      },
-      "odds": {
-        "Oui": "1,51",
-        "Non": "2,50"
-      }
-    },
-    {
-      "unique_key": "20:22|Liverpool|Wolverhampton",
-      "round_time": "20:22",
-      "market": "G/NG",
-      "teams": {
-        "home": "Liverpool",
-        "away": "Wolverhampton"
-      },
-      "odds": {
-        "Oui": "2,01",
-        "Non": "1,78"
-      }
-    },
-    {
-      "unique_key": "20:22|Burnley|London Blues",
-      "round_time": "20:22",
-      "market": "G/NG",
-      "teams": {
-        "home": "Burnley",
-        "away": "London Blues"
-      },
-      "odds": {
-        "Oui": "1,63",
-        "Non": "2,24"
-      }
-    },
-    {
-      "unique_key": "20:22|C. Palace|Manchester Blue",
-      "round_time": "20:22",
-      "market": "G/NG",
-      "teams": {
-        "home": "C. Palace",
-        "away": "Manchester Blue"
-      },
-      "odds": {
-        "Oui": "1,70",
-        "Non": "2,12"
-      }
-    },
-    {
-      "unique_key": "20:22|Bournemouth|A. Villa",
-      "round_time": "20:22",
-      "market": "G/NG",
-      "teams": {
-        "home": "Bournemouth",
-        "away": "A. Villa"
-      },
-      "odds": {
-        "Oui": "1,76",
-        "Non": "2,04"
-      }
-    },
-    {
-      "unique_key": "20:22|Newcastle|Leeds",
-      "round_time": "20:22",
+      "unique_key": "23:00|Newcastle|Everton",
+      "round_time": "23:00",
       "market": "G/NG",
       "teams": {
         "home": "Newcastle",
+        "away": "Everton"
+      },
+      "odds": {
+        "Oui": "2,13",
+        "Non": "1,69"
+      }
+    },
+    {
+      "unique_key": "23:00|Liverpool|Manchester Blue",
+      "round_time": "23:00",
+      "market": "G/NG",
+      "teams": {
+        "home": "Liverpool",
+        "away": "Manchester Blue"
+      },
+      "odds": {
+        "Oui": "1,62",
+        "Non": "2,25"
+      }
+    },
+    {
+      "unique_key": "23:00|Spurs|Brighton",
+      "round_time": "23:00",
+      "market": "G/NG",
+      "teams": {
+        "home": "Spurs",
+        "away": "Brighton"
+      },
+      "odds": {
+        "Oui": "1,32",
+        "Non": "3,30"
+      }
+    },
+    {
+      "unique_key": "23:00|Brentford|Leeds",
+      "round_time": "23:00",
+      "market": "G/NG",
+      "teams": {
+        "home": "Brentford",
         "away": "Leeds"
       },
       "odds": {
-        "Oui": "2,28",
-        "Non": "1,61"
+        "Oui": "1,75",
+        "Non": "2,05"
       }
     },
     {
-      "unique_key": "20:22|Brighton|Fulham",
-      "round_time": "20:22",
+      "unique_key": "23:00|Wolverhampton|C. Palace",
+      "round_time": "23:00",
       "market": "G/NG",
       "teams": {
-        "home": "Brighton",
-        "away": "Fulham"
+        "home": "Wolverhampton",
+        "away": "C. Palace"
       },
       "odds": {
-        "Oui": "1,56",
-        "Non": "2,40"
+        "Oui": "1,72",
+        "Non": "2,09"
       }
     },
     {
-      "unique_key": "20:22|N. Forest|Brentford",
-      "round_time": "20:22",
+      "unique_key": "23:00|London Blues|Manchester Red",
+      "round_time": "23:00",
       "market": "G/NG",
       "teams": {
-        "home": "N. Forest",
-        "away": "Brentford"
+        "home": "London Blues",
+        "away": "Manchester Red"
       },
       "odds": {
-        "Oui": "1,69",
+        "Oui": "1,68",
         "Non": "2,14"
       }
     },
     {
-      "unique_key": "20:22|London Reds|Everton",
-      "round_time": "20:22",
+      "unique_key": "23:00|Burnley|Fulham",
+      "round_time": "23:00",
       "market": "G/NG",
       "teams": {
-        "home": "London Reds",
-        "away": "Everton"
+        "home": "Burnley",
+        "away": "Fulham"
       },
       "odds": {
-        "Oui": "2,07",
-        "Non": "1,74"
+        "Oui": "1,74",
+        "Non": "2,06"
       }
     },
     {
-      "unique_key": "20:22|Manchester Red|Spurs",
-      "round_time": "20:22",
+      "unique_key": "23:00|Bournemouth|London Reds",
+      "round_time": "23:00",
       "market": "G/NG",
       "teams": {
-        "home": "Manchester Red",
-        "away": "Spurs"
+        "home": "Bournemouth",
+        "away": "London Reds"
       },
       "odds": {
-        "Oui": "1,42",
-        "Non": "2,81"
+        "Oui": "1,99",
+        "Non": "1,80"
       }
     },
     {
-      "unique_key": "20:24|Spurs|C. Palace",
-      "round_time": "20:24",
+      "unique_key": "23:00|N. Forest|Sunderland",
+      "round_time": "23:00",
       "market": "G/NG",
       "teams": {
-        "home": "Spurs",
-        "away": "C. Palace"
+        "home": "N. Forest",
+        "away": "Sunderland"
       },
       "odds": {
-        "Oui": "1,51",
-        "Non": "2,51"
+        "Oui": "1,65",
+        "Non": "2,20"
       }
     },
     {
-      "unique_key": "20:24|Brentford|Newcastle",
-      "round_time": "20:24",
+      "unique_key": "23:00|A. Villa|West Ham",
+      "round_time": "23:00",
       "market": "G/NG",
       "teams": {
-        "home": "Brentford",
-        "away": "Newcastle"
-      },
-      "odds": {
-        "Oui": "1,35",
-        "Non": "3,13"
-      }
-    },
-    {
-      "unique_key": "20:24|Sunderland|Liverpool",
-      "round_time": "20:24",
-      "market": "G/NG",
-      "teams": {
-        "home": "Sunderland",
-        "away": "Liverpool"
-      },
-      "odds": {
-        "Oui": "1,96",
-        "Non": "1,82"
-      }
-    },
-    {
-      "unique_key": "20:24|Fulham|Manchester Red",
-      "round_time": "20:24",
-      "market": "G/NG",
-      "teams": {
-        "home": "Fulham",
-        "away": "Manchester Red"
-      },
-      "odds": {
-        "Oui": "1,56",
-        "Non": "2,38"
-      }
-    },
-    {
-      "unique_key": "20:24|Everton|Burnley",
-      "round_time": "20:24",
-      "market": "G/NG",
-      "teams": {
-        "home": "Everton",
-        "away": "Burnley"
-      },
-      "odds": {
-        "Oui": "1,68",
-        "Non": "2,15"
-      }
-    },
-    {
-      "unique_key": "20:24|London Blues|West Ham",
-      "round_time": "20:24",
-      "market": "G/NG",
-      "teams": {
-        "home": "London Blues",
+        "home": "A. Villa",
         "away": "West Ham"
       },
       "odds": {
-        "Oui": "1,70",
-        "Non": "2,12"
+        "Oui": "1,62",
+        "Non": "2,26"
       }
     },
     {
-      "unique_key": "20:24|Leeds|Bournemouth",
-      "round_time": "20:24",
+      "unique_key": "23:02|C. Palace|Fulham",
+      "round_time": "23:02",
       "market": "G/NG",
       "teams": {
-        "home": "Leeds",
+        "home": "C. Palace",
+        "away": "Fulham"
+      },
+      "odds": {
+        "Oui": "1,60",
+        "Non": "2,30"
+      }
+    },
+    {
+      "unique_key": "23:02|Manchester Red|Bournemouth",
+      "round_time": "23:02",
+      "market": "G/NG",
+      "teams": {
+        "home": "Manchester Red",
         "away": "Bournemouth"
       },
       "odds": {
@@ -231,324 +166,38 @@
       }
     },
     {
-      "unique_key": "20:24|Wolverhampton|Manchester Blue",
-      "round_time": "20:24",
-      "market": "G/NG",
-      "teams": {
-        "home": "Wolverhampton",
-        "away": "Manchester Blue"
-      },
-      "odds": {
-        "Oui": "1,79",
-        "Non": "1,99"
-      }
-    },
-    {
-      "unique_key": "20:24|N. Forest|London Reds",
-      "round_time": "20:24",
-      "market": "G/NG",
-      "teams": {
-        "home": "N. Forest",
-        "away": "London Reds"
-      },
-      "odds": {
-        "Oui": "1,86",
-        "Non": "1,92"
-      }
-    },
-    {
-      "unique_key": "20:24|A. Villa|Brighton",
-      "round_time": "20:24",
-      "market": "G/NG",
-      "teams": {
-        "home": "A. Villa",
-        "away": "Brighton"
-      },
-      "odds": {
-        "Oui": "1,42",
-        "Non": "2,82"
-      }
-    },
-    {
-      "unique_key": "20:26|Bournemouth|Brentford",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "Bournemouth",
-        "away": "Brentford"
-      },
-      "odds": {
-        "Oui": "1,76",
-        "Non": "2,04"
-      }
-    },
-    {
-      "unique_key": "20:26|Newcastle|London Reds",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "Newcastle",
-        "away": "London Reds"
-      },
-      "odds": {
-        "Oui": "1,64",
-        "Non": "2,23"
-      }
-    },
-    {
-      "unique_key": "20:26|Burnley|N. Forest",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "Burnley",
-        "away": "N. Forest"
-      },
-      "odds": {
-        "Oui": "1,62",
-        "Non": "2,27"
-      }
-    },
-    {
-      "unique_key": "20:26|Manchester Blue|Sunderland",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "Manchester Blue",
-        "away": "Sunderland"
-      },
-      "odds": {
-        "Oui": "1,93",
-        "Non": "1,85"
-      }
-    },
-    {
-      "unique_key": "20:26|West Ham|Everton",
-      "round_time": "20:26",
+      "unique_key": "23:02|West Ham|Burnley",
+      "round_time": "23:02",
       "market": "G/NG",
       "teams": {
         "home": "West Ham",
-        "away": "Everton"
-      },
-      "odds": {
-        "Oui": "1,79",
-        "Non": "1,99"
-      }
-    },
-    {
-      "unique_key": "20:26|Spurs|Fulham",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "Spurs",
-        "away": "Fulham"
-      },
-      "odds": {
-        "Oui": "1,44",
-        "Non": "2,74"
-      }
-    },
-    {
-      "unique_key": "20:26|Liverpool|London Blues",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "Liverpool",
-        "away": "London Blues"
-      },
-      "odds": {
-        "Oui": "1,72",
-        "Non": "2,09"
-      }
-    },
-    {
-      "unique_key": "20:26|Manchester Red|A. Villa",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "Manchester Red",
-        "away": "A. Villa"
-      },
-      "odds": {
-        "Oui": "1,68",
-        "Non": "2,15"
-      }
-    },
-    {
-      "unique_key": "20:26|Brighton|Leeds",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "Brighton",
-        "away": "Leeds"
-      },
-      "odds": {
-        "Oui": "1,96",
-        "Non": "1,82"
-      }
-    },
-    {
-      "unique_key": "20:26|C. Palace|Wolverhampton",
-      "round_time": "20:26",
-      "market": "G/NG",
-      "teams": {
-        "home": "C. Palace",
-        "away": "Wolverhampton"
-      },
-      "odds": {
-        "Oui": "1,67",
-        "Non": "2,18"
-      }
-    },
-    {
-      "unique_key": "20:28|Newcastle|Burnley",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "Newcastle",
         "away": "Burnley"
       },
       "odds": {
-        "Oui": "1,81",
-        "Non": "1,97"
+        "Oui": "1,48",
+        "Non": "2,61"
       }
     },
     {
-      "unique_key": "20:28|London Reds|Bournemouth",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "London Reds",
-        "away": "Bournemouth"
-      },
-      "odds": {
-        "Oui": "1,65",
-        "Non": "2,21"
-      }
-    },
-    {
-      "unique_key": "20:28|Fulham|C. Palace",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "Fulham",
-        "away": "C. Palace"
-      },
-      "odds": {
-        "Oui": "1,59",
-        "Non": "2,31"
-      }
-    },
-    {
-      "unique_key": "20:28|A. Villa|Spurs",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "A. Villa",
-        "away": "Spurs"
-      },
-      "odds": {
-        "Oui": "1,38",
-        "Non": "2,98"
-      }
-    },
-    {
-      "unique_key": "20:28|London Blues|Manchester Blue",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "London Blues",
-        "away": "Manchester Blue"
-      },
-      "odds": {
-        "Oui": "1,65",
-        "Non": "2,20"
-      }
-    },
-    {
-      "unique_key": "20:28|Sunderland|Wolverhampton",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "Sunderland",
-        "away": "Wolverhampton"
-      },
-      "odds": {
-        "Oui": "1,67",
-        "Non": "2,17"
-      }
-    },
-    {
-      "unique_key": "20:28|Brentford|Brighton",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "Brentford",
-        "away": "Brighton"
-      },
-      "odds": {
-        "Oui": "1,33",
-        "Non": "3,25"
-      }
-    },
-    {
-      "unique_key": "20:28|Everton|Liverpool",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "Everton",
-        "away": "Liverpool"
-      },
-      "odds": {
-        "Oui": "1,65",
-        "Non": "2,20"
-      }
-    },
-    {
-      "unique_key": "20:28|Leeds|Manchester Red",
-      "round_time": "20:28",
+      "unique_key": "23:02|Leeds|Newcastle",
+      "round_time": "23:02",
       "market": "G/NG",
       "teams": {
         "home": "Leeds",
-        "away": "Manchester Red"
-      },
-      "odds": {
-        "Oui": "1,75",
-        "Non": "2,05"
-      }
-    },
-    {
-      "unique_key": "20:28|N. Forest|West Ham",
-      "round_time": "20:28",
-      "market": "G/NG",
-      "teams": {
-        "home": "N. Forest",
-        "away": "West Ham"
-      },
-      "odds": {
-        "Oui": "1,68",
-        "Non": "2,15"
-      }
-    },
-    {
-      "unique_key": "20:30|West Ham|Newcastle",
-      "round_time": "20:30",
-      "market": "G/NG",
-      "teams": {
-        "home": "West Ham",
         "away": "Newcastle"
       },
       "odds": {
-        "Oui": "1,43",
-        "Non": "2,78"
+        "Oui": "1,70",
+        "Non": "2,12"
       }
     },
     {
-      "unique_key": "20:30|Fulham|A. Villa",
-      "round_time": "20:30",
+      "unique_key": "23:02|Brighton|Brentford",
+      "round_time": "23:02",
       "market": "G/NG",
       "teams": {
-        "home": "Fulham",
-        "away": "A. Villa"
+        "home": "Brighton",
+        "away": "Brentford"
       },
       "odds": {
         "Oui": "1,57",
@@ -556,190 +205,21 @@
       }
     },
     {
-      "unique_key": "20:30|Bournemouth|Burnley",
-      "round_time": "20:30",
+      "unique_key": "23:02|Sunderland|Liverpool",
+      "round_time": "23:02",
       "market": "G/NG",
       "teams": {
-        "home": "Bournemouth",
-        "away": "Burnley"
+        "home": "Sunderland",
+        "away": "Liverpool"
       },
       "odds": {
-        "Oui": "1,59",
-        "Non": "2,32"
+        "Oui": "1,96",
+        "Non": "1,82"
       }
     },
     {
-      "unique_key": "20:30|Manchester Blue|Everton",
-      "round_time": "20:30",
-      "market": "G/NG",
-      "teams": {
-        "home": "Manchester Blue",
-        "away": "Everton"
-      },
-      "odds": {
-        "Oui": "2,16",
-        "Non": "1,68"
-      }
-    },
-    {
-      "unique_key": "20:30|Spurs|Leeds",
-      "round_time": "20:30",
-      "market": "G/NG",
-      "teams": {
-        "home": "Spurs",
-        "away": "Leeds"
-      },
-      "odds": {
-        "Oui": "1,73",
-        "Non": "2,08"
-      }
-    },
-    {
-      "unique_key": "20:30|Liverpool|N. Forest",
-      "round_time": "20:30",
-      "market": "G/NG",
-      "teams": {
-        "home": "Liverpool",
-        "away": "N. Forest"
-      },
-      "odds": {
-        "Oui": "2,01",
-        "Non": "1,78"
-      }
-    },
-    {
-      "unique_key": "20:30|C. Palace|Sunderland",
-      "round_time": "20:30",
-      "market": "G/NG",
-      "teams": {
-        "home": "C. Palace",
-        "away": "Sunderland"
-      },
-      "odds": {
-        "Oui": "1,61",
-        "Non": "2,28"
-      }
-    },
-    {
-      "unique_key": "20:30|Manchester Red|Brentford",
-      "round_time": "20:30",
-      "market": "G/NG",
-      "teams": {
-        "home": "Manchester Red",
-        "away": "Brentford"
-      },
-      "odds": {
-        "Oui": "1,66",
-        "Non": "2,18"
-      }
-    },
-    {
-      "unique_key": "20:30|Wolverhampton|London Blues",
-      "round_time": "20:30",
-      "market": "G/NG",
-      "teams": {
-        "home": "Wolverhampton",
-        "away": "London Blues"
-      },
-      "odds": {
-        "Oui": "1,53",
-        "Non": "2,46"
-      }
-    },
-    {
-      "unique_key": "20:30|Brighton|London Reds",
-      "round_time": "20:30",
-      "market": "G/NG",
-      "teams": {
-        "home": "Brighton",
-        "away": "London Reds"
-      },
-      "odds": {
-        "Oui": "1,66",
-        "Non": "2,19"
-      }
-    },
-    {
-      "unique_key": "20:32|N. Forest|Manchester Blue",
-      "round_time": "20:32",
-      "market": "G/NG",
-      "teams": {
-        "home": "N. Forest",
-        "away": "Manchester Blue"
-      },
-      "odds": {
-        "Oui": "1,74",
-        "Non": "2,05"
-      }
-    },
-    {
-      "unique_key": "20:32|Burnley|Brighton",
-      "round_time": "20:32",
-      "market": "G/NG",
-      "teams": {
-        "home": "Burnley",
-        "away": "Brighton"
-      },
-      "odds": {
-        "Oui": "1,54",
-        "Non": "2,45"
-      }
-    },
-    {
-      "unique_key": "20:32|London Reds|Manchester Red",
-      "round_time": "20:32",
-      "market": "G/NG",
-      "teams": {
-        "home": "London Reds",
-        "away": "Manchester Red"
-      },
-      "odds": {
-        "Oui": "1,77",
-        "Non": "2,03"
-      }
-    },
-    {
-      "unique_key": "20:32|Leeds|Fulham",
-      "round_time": "20:32",
-      "market": "G/NG",
-      "teams": {
-        "home": "Leeds",
-        "away": "Fulham"
-      },
-      "odds": {
-        "Oui": "1,76",
-        "Non": "2,03"
-      }
-    },
-    {
-      "unique_key": "20:32|Bournemouth|West Ham",
-      "round_time": "20:32",
-      "market": "G/NG",
-      "teams": {
-        "home": "Bournemouth",
-        "away": "West Ham"
-      },
-      "odds": {
-        "Oui": "1,67",
-        "Non": "2,17"
-      }
-    },
-    {
-      "unique_key": "20:32|A. Villa|C. Palace",
-      "round_time": "20:32",
-      "market": "G/NG",
-      "teams": {
-        "home": "A. Villa",
-        "away": "C. Palace"
-      },
-      "odds": {
-        "Oui": "1,68",
-        "Non": "2,16"
-      }
-    },
-    {
-      "unique_key": "20:32|Everton|Wolverhampton",
-      "round_time": "20:32",
+      "unique_key": "23:02|Everton|Wolverhampton",
+      "round_time": "23:02",
       "market": "G/NG",
       "teams": {
         "home": "Everton",
@@ -747,46 +227,46 @@
       },
       "odds": {
         "Oui": "1,79",
-        "Non": "1,99"
+        "Non": "2,00"
       }
     },
     {
-      "unique_key": "20:32|Brentford|Spurs",
-      "round_time": "20:32",
+      "unique_key": "23:02|Manchester Blue|A. Villa",
+      "round_time": "23:02",
       "market": "G/NG",
       "teams": {
-        "home": "Brentford",
-        "away": "Spurs"
+        "home": "Manchester Blue",
+        "away": "A. Villa"
       },
       "odds": {
-        "Oui": "1,31",
-        "Non": "3,39"
+        "Oui": "1,80",
+        "Non": "1,98"
       }
     },
     {
-      "unique_key": "20:32|Newcastle|Liverpool",
-      "round_time": "20:32",
-      "market": "G/NG",
-      "teams": {
-        "home": "Newcastle",
-        "away": "Liverpool"
-      },
-      "odds": {
-        "Oui": "1,47",
-        "Non": "2,65"
-      }
-    },
-    {
-      "unique_key": "20:32|London Blues|Sunderland",
-      "round_time": "20:32",
+      "unique_key": "23:02|London Blues|Spurs",
+      "round_time": "23:02",
       "market": "G/NG",
       "teams": {
         "home": "London Blues",
-        "away": "Sunderland"
+        "away": "Spurs"
       },
       "odds": {
-        "Oui": "1,71",
-        "Non": "2,11"
+        "Oui": "1,45",
+        "Non": "2,71"
+      }
+    },
+    {
+      "unique_key": "23:02|London Reds|N. Forest",
+      "round_time": "23:02",
+      "market": "G/NG",
+      "teams": {
+        "home": "London Reds",
+        "away": "N. Forest"
+      },
+      "odds": {
+        "Oui": "1,86",
+        "Non": "1,92"
       }
     }
   ]
