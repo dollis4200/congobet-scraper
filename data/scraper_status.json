@@ -1,17 +1,17 @@
 {
-  "last_run_utc": "2026-07-03T20:47:30.383023+00:00",
-  "mode": "results",
-  "total_duration_s": 19.7,
+  "last_run_utc": "2026-07-03T21:47:59.961970+00:00",
+  "mode": "gng",
+  "total_duration_s": 4.7,
   "durations_s": {
-    "results": 19.1
+    "gng": 4.3
   },
-  "success": [
-    "results"
+  "success": [],
+  "errors": [
+    "GNG: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.congobet.net/virtual/category/instant-league/8035/matches\nCall log:\n  - navigating to \"https://www.congobet.net/virtual/category/instant-league/8035/matches\", waiting until \"networkidle\"\n"
   ],
-  "errors": [],
   "counts": {
     "1x2_rounds": 0,
     "gng_matches": 0,
-    "results_matches": 210
+    "results_matches": 0
   }
 }
