@@ -26812,3 +26812,18 @@ Call log:
   - navigating to "https://www.congobet.net/virtual/category/instant-league/8035/matches", waiting until "networkidle"
 
 21:48:04 [INFO] === FIN 4.7s erreurs=['GNG: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.congobet.net/virtual/category/instant-league/8035/matches\nCall log:\n  - navigating to "https://www.congobet.net/virtual/category/instant-league/8035/matches", waiting until "networkidle"\n'] ===
+21:49:51 [INFO] === DÉBUT CYCLE mode=results ===
+21:49:51 [INFO] === SCRAPE RÉSULTATS (version corrigée) ===
+21:49:51 [WARNING] [retry 1/3] goto: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.congobet.net/virtual/category/instant-league/8035/results
+Call log:
+  - navigating to "https://www.congobet.net/virtual/category/instant-league/8035/results", waiting until "networkidle"
+
+21:49:53 [WARNING] [retry 2/3] goto: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.congobet.net/virtual/category/instant-league/8035/results
+Call log:
+  - navigating to "https://www.congobet.net/virtual/category/instant-league/8035/results", waiting until "networkidle"
+
+21:49:55 [ERROR] Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.congobet.net/virtual/category/instant-league/8035/results
+Call log:
+  - navigating to "https://www.congobet.net/virtual/category/instant-league/8035/results", waiting until "networkidle"
+
+21:49:55 [INFO] === FIN 4.6s erreurs=['Results: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.congobet.net/virtual/category/instant-league/8035/results\nCall log:\n  - navigating to "https://www.congobet.net/virtual/category/instant-league/8035/results", waiting until "networkidle"\n'] ===
