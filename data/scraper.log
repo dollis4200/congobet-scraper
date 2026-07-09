@@ -28773,3 +28773,20 @@ Call log:
 11:40:50 [INFO]   0 clics 'Afficher plus'
 11:41:05 [WARNING] Aucun conteneur de résultat trouvé
 11:41:08 [INFO] === FIN 25.1s erreurs=aucune ===
+14:09:14 [INFO] === DÉBUT CYCLE mode=1x2 ===
+14:09:15 [INFO] === SCRAPE 1X2 ===
+14:09:24 [WARNING] Impossible de sélectionner 1X2
+14:09:24 [INFO] rounds ignorés (timer courant / hors séquence): ['14:10', '14:12', '14:14']
+14:09:24 [INFO] 6 rounds retenus / 10 total (9 horodatés)
+14:09:26 [INFO]   1X2 [14:19]: 10 matchs
+14:09:27 [INFO]   1X2 [14:21]: 10 matchs
+14:09:29 [INFO]   1X2 [14:23]: 10 matchs
+14:09:30 [INFO]   1X2 [14:25]: 10 matchs
+14:09:31 [INFO]   1X2 [14:27]: 10 matchs
+14:09:33 [INFO]   1X2 [14:29]: 10 matchs
+14:09:33 [INFO] 1X2: 6 rounds → data/congobet_1x2_rounds.json
+14:09:33 [INFO] === FIN 18.7s erreurs=aucune ===
+14:09:33 [INFO] === DÉBUT CYCLE mode=gng ===
+14:09:33 [INFO] === SCRAPE G/NG ===
+14:09:42 [WARNING] Impossible de sélectionner G/NG
+14:09:42 [INFO] === FIN 8.7s erreurs=aucune ===
