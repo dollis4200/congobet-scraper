@@ -29536,3 +29536,22 @@ Call log:
 14:14:17 [INFO]   3 clics 'Afficher plus'
 14:14:20 [INFO] Résultats: 150 → data/cbet_results.json
 14:14:20 [INFO] === FIN 13.7s erreurs=aucune ===
+15:14:53 [INFO] === DÉBUT CYCLE mode=1x2 ===
+15:14:54 [INFO] === SCRAPE 1X2 ===
+15:15:02 [WARNING] Impossible de sélectionner 1X2
+15:15:02 [INFO] 9 rounds retenus / 10 total (9 horodatés)
+15:15:04 [INFO]   1X2 [15:16]: 10 matchs
+15:15:05 [INFO]   1X2 [15:18]: 10 matchs
+15:15:07 [INFO]   1X2 [15:20]: 10 matchs
+15:15:08 [INFO]   1X2 [15:22]: 10 matchs
+15:15:10 [INFO]   1X2 [15:24]: 10 matchs
+15:15:11 [INFO]   1X2 [15:26]: 10 matchs
+15:15:12 [INFO]   1X2 [15:28]: 10 matchs
+15:15:14 [INFO]   1X2 [15:30]: 10 matchs
+15:15:15 [INFO]   1X2 [15:32]: 10 matchs
+15:15:15 [INFO] 1X2: 9 rounds → data/congobet_1x2_rounds.json
+15:15:15 [INFO] === FIN 22.4s erreurs=aucune ===
+15:15:16 [INFO] === DÉBUT CYCLE mode=gng ===
+15:15:16 [INFO] === SCRAPE G/NG ===
+15:15:24 [WARNING] Impossible de sélectionner G/NG
+15:15:27 [INFO] === FIN 11.5s erreurs=aucune ===
