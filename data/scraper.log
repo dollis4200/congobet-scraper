@@ -40911,3 +40911,8 @@ Call log:
 20:00:01 [INFO] === SCRAPE G/NG ===
 20:00:10 [WARNING] Impossible de sélectionner G/NG
 20:00:12 [INFO] === FIN 11.7s erreurs=aucune ===
+20:02:02 [INFO] === DÉBUT CYCLE mode=results ===
+20:02:03 [INFO] === SCRAPE RÉSULTATS (version corrigée) ===
+20:02:18 [INFO]   5 clics 'Afficher plus'
+20:02:21 [INFO] Résultats: 240 → data/cbet_results.json
+20:02:24 [INFO] === FIN 21.9s erreurs=aucune ===
