@@ -42148,3 +42148,22 @@ Call log:
 23:40:51 [INFO]   3 clics 'Afficher plus'
 23:40:53 [INFO] Résultats: 160 → data/cbet_results.json
 23:40:53 [INFO] === FIN 13.8s erreurs=aucune ===
+00:00:43 [INFO] === DÉBUT CYCLE mode=1x2 ===
+00:00:45 [INFO] === SCRAPE 1X2 ===
+00:00:54 [WARNING] Impossible de sélectionner 1X2
+00:00:54 [INFO] 9 rounds retenus / 10 total (9 horodatés)
+00:00:55 [INFO]   1X2 [00:02]: 10 matchs
+00:00:57 [INFO]   1X2 [00:04]: 10 matchs
+00:00:58 [INFO]   1X2 [00:06]: 10 matchs
+00:00:59 [INFO]   1X2 [00:08]: 10 matchs
+00:01:01 [INFO]   1X2 [00:10]: 10 matchs
+00:01:02 [INFO]   1X2 [00:12]: 10 matchs
+00:01:04 [INFO]   1X2 [00:14]: 10 matchs
+00:01:05 [INFO]   1X2 [00:16]: 10 matchs
+00:01:06 [INFO]   1X2 [00:18]: 10 matchs
+00:01:06 [INFO] 1X2: 9 rounds → data/congobet_1x2_rounds.json
+00:01:09 [INFO] === FIN 25.3s erreurs=aucune ===
+00:01:09 [INFO] === DÉBUT CYCLE mode=gng ===
+00:01:09 [INFO] === SCRAPE G/NG ===
+00:01:17 [WARNING] Impossible de sélectionner G/NG
+00:01:20 [INFO] === FIN 10.8s erreurs=aucune ===
