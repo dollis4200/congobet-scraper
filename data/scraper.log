@@ -43123,3 +43123,8 @@ Call log:
 00:40:03 [INFO] === SCRAPE G/NG ===
 00:40:11 [WARNING] Impossible de sélectionner G/NG
 00:40:13 [INFO] === FIN 10.9s erreurs=aucune ===
+00:42:03 [INFO] === DÉBUT CYCLE mode=results ===
+00:42:03 [INFO] === SCRAPE RÉSULTATS (version corrigée) ===
+00:42:14 [INFO]   3 clics 'Afficher plus'
+00:42:16 [INFO] Résultats: 160 → data/cbet_results.json
+00:42:19 [INFO] === FIN 16.1s erreurs=aucune ===
