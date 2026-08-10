@@ -43624,3 +43624,8 @@ Call log:
 21:51:35 [INFO] === SCRAPE G/NG ===
 21:51:43 [WARNING] Impossible de sélectionner G/NG
 21:51:43 [INFO] === FIN 8.8s erreurs=aucune ===
+21:53:33 [INFO] === DÉBUT CYCLE mode=results ===
+21:53:34 [INFO] === SCRAPE RÉSULTATS (version corrigée) ===
+21:53:47 [INFO]   4 clics 'Afficher plus'
+21:53:50 [INFO] Résultats: 200 → data/cbet_results.json
+21:53:50 [INFO] === FIN 16.8s erreurs=aucune ===
