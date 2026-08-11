@@ -44122,3 +44122,8 @@ Call log:
 16:28:04 [INFO] === SCRAPE G/NG ===
 16:28:10 [WARNING] Impossible de sélectionner G/NG
 16:28:13 [INFO] === FIN 9.1s erreurs=aucune ===
+16:30:04 [INFO] === DÉBUT CYCLE mode=results ===
+16:30:04 [INFO] === SCRAPE RÉSULTATS (version corrigée) ===
+16:30:16 [INFO]   5 clics 'Afficher plus'
+16:30:20 [INFO] Résultats: 240 → data/cbet_results.json
+16:30:20 [INFO] === FIN 16.4s erreurs=aucune ===
