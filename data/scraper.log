@@ -47113,3 +47113,19 @@ Call log:
 15:27:58 [INFO] === SCRAPE G/NG ===
 15:28:07 [WARNING] Impossible de sélectionner G/NG
 15:28:07 [INFO] === FIN 9.3s erreurs=aucune ===
+19:32:06 [INFO] === DÉBUT CYCLE mode=1x2 ===
+19:32:07 [INFO] === SCRAPE 1X2 ===
+19:32:15 [INFO] rounds ignorés (timer courant / hors séquence): ['00:13', '19:34', '19:36', '19:38']
+19:32:15 [INFO] 6 rounds retenus / 10 total (10 horodatés)
+19:32:17 [INFO]   1X2 [19:43]: 10 matchs
+19:32:18 [INFO]   1X2 [19:45]: 10 matchs
+19:32:19 [INFO]   1X2 [19:47]: 10 matchs
+19:32:21 [INFO]   1X2 [19:49]: 10 matchs
+19:32:22 [INFO]   1X2 [19:51]: 10 matchs
+19:32:24 [INFO]   1X2 [19:53]: 10 matchs
+19:32:24 [INFO] 1X2: 6 rounds → data/congobet_1x2_rounds.json
+19:32:24 [INFO] === FIN 17.5s erreurs=aucune ===
+19:32:24 [INFO] === DÉBUT CYCLE mode=gng ===
+19:32:24 [INFO] === SCRAPE G/NG ===
+19:32:33 [WARNING] Impossible de sélectionner G/NG
+19:32:33 [INFO] === FIN 9.4s erreurs=aucune ===
