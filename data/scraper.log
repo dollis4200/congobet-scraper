@@ -46743,3 +46743,33 @@ Call log:
 06:53:11 [INFO]   2 clics 'Afficher plus'
 06:53:12 [INFO] Résultats: 100 → data/cbet_results.json
 06:53:12 [INFO] === FIN 10.8s erreurs=aucune ===
+07:18:34 [INFO] === DÉBUT CYCLE mode=1x2 ===
+07:18:37 [INFO] === SCRAPE 1X2 ===
+07:18:45 [INFO] rounds ignorés (timer courant / hors séquence): ['00:43']
+07:18:45 [INFO] 9 rounds retenus / 10 total (10 horodatés)
+07:18:47 [INFO]   1X2 [07:21]: 10 matchs
+07:18:48 [INFO]   1X2 [07:23]: 10 matchs
+07:18:49 [INFO]   1X2 [07:25]: 10 matchs
+07:18:51 [INFO]   1X2 [07:27]: 10 matchs
+07:18:52 [INFO]   1X2 [07:29]: 10 matchs
+07:18:53 [INFO]   1X2 [07:31]: 10 matchs
+07:18:55 [INFO]   1X2 [07:33]: 10 matchs
+07:18:56 [INFO]   1X2 [07:35]: 10 matchs
+07:18:57 [INFO]   1X2 [07:37]: 10 matchs
+07:18:57 [INFO] 1X2: 9 rounds → data/congobet_1x2_rounds.json
+07:19:00 [INFO] === FIN 25.7s erreurs=aucune ===
+07:19:00 [INFO] === DÉBUT CYCLE mode=gng ===
+07:19:01 [INFO] === SCRAPE G/NG ===
+07:19:12 [INFO] rounds ignorés (timer courant / hors séquence): ['00:16']
+07:19:12 [INFO] 9 rounds retenus / 10 total (10 horodatés)
+07:19:15 [INFO]   G/NG [07:21]: 10 matchs
+07:19:18 [INFO]   G/NG [07:23]: 10 matchs
+07:19:21 [INFO]   G/NG [07:25]: 10 matchs
+07:19:24 [INFO]   G/NG [07:27]: 10 matchs
+07:19:27 [INFO]   G/NG [07:29]: 10 matchs
+07:19:30 [INFO]   G/NG [07:31]: 10 matchs
+07:19:33 [INFO]   G/NG [07:33]: 10 matchs
+07:19:36 [INFO]   G/NG [07:35]: 10 matchs
+07:19:39 [INFO]   G/NG [07:37]: 10 matchs
+07:19:39 [INFO] G/NG: 90 cotes → data/cbet_odds.json
+07:19:42 [INFO] === FIN 41.2s erreurs=aucune ===
