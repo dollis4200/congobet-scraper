@@ -47139,3 +47139,13 @@ Call log:
 19:30:40 [INFO] === SCRAPE G/NG ===
 19:30:44 [WARNING] Impossible de sélectionner G/NG
 19:30:44 [INFO] === FIN 4.8s erreurs=aucune ===
+01:34:53 [INFO] === DÉBUT CYCLE mode=1x2 ===
+01:34:53 [INFO] === SCRAPE 1X2 ===
+01:35:01 [WARNING] Impossible de sélectionner 1X2
+01:35:01 [INFO] 0 rounds retenus / 0 total (0 horodatés)
+01:35:01 [INFO] 1X2: 0 rounds → data/congobet_1x2_rounds.json
+01:35:04 [INFO] === FIN 11.8s erreurs=aucune ===
+01:35:05 [INFO] === DÉBUT CYCLE mode=gng ===
+01:35:05 [INFO] === SCRAPE G/NG ===
+01:35:12 [WARNING] Impossible de sélectionner G/NG
+01:35:15 [INFO] === FIN 10.3s erreurs=aucune ===
